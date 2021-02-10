@@ -1,4 +1,5 @@
 import React from "react";
+import MapComponent from "../Map";
 
 const CountryDetailsModal = ({
   showModal,
@@ -26,6 +27,7 @@ const CountryDetailsModal = ({
               &times;
             </span>
             <div className="modal__content__info">
+            <h4 className="field"><span>Country Name: </span>{countrySelected.name}</h4>
               <div className="avatar">
                 <img
                   className="flag flag--size"
@@ -33,8 +35,11 @@ const CountryDetailsModal = ({
                   alt={countrySelected.name}
                 />
               </div>
+              <div>
+                <h4 className="field"><span>Location:</span></h4>
+                <MapComponent location={countrySelected.latlng}/>
+              </div>
               <div className="description">
-                <h4 className="field"><span>Country Name: </span>{countrySelected.name}</h4>
                 <h4 className="field"><span>Region: </span>{countrySelected.subregion}</h4>
                 <h4 className="field"><span>Top Level Domian: </span>{countrySelected.topLevelDomain[0]}</h4>
                 <h4 className="field"><span>Code: </span>{countrySelected.alpha3Code}</h4>
