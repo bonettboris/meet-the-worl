@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import CountriesListComponent from "../../Components/CountriesList";
 import CountryDetailsModal from "../../Components/countryDetails";
 import FilterComponent from "../../Components/Filter";
+import LoaderComponent from "../../Components/Common/Loader";
 
-import API_URL from "../../Config";
+import SETTINGS from "../../Config";
 
 const HomePage = () => {
   const [showCountryDetails, setShowCountryDetails] = useState(false);
@@ -14,7 +15,7 @@ const HomePage = () => {
   useEffect(() => {
     async function getCountries() {
       try {
-        let response = await fetch(API_URL);
+        let response = await fetch(SETTINGS.API_URL);
         if (response.ok) {
           const countries = await response.json();
           setCountries(countries);
@@ -56,7 +57,7 @@ const HomePage = () => {
 
   return (
     <React.Fragment>
-      <div>{!countriesList && <h1>Cargando</h1>}</div>
+      <div>{!countriesList && (<LoaderComponent />)}</div>
       <div>
         {countriesList && (
           <div className="wrapper">
