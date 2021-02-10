@@ -5,7 +5,6 @@ import HomePage from "../Home";
 import NotFoundPage from "../NotFound";
 
 import NavbarComponent from "../../Components/Common/Navbar";
-import FooterComponent from "../../Components/Common/Footer";
 
 const AppContainer = () => {
   return (
@@ -15,7 +14,6 @@ const AppContainer = () => {
         <Route path="/" exact component={() => <HomePage />} />
         <Route path="*" component={() => <NotFoundPage />} />
       </Switch>
-      <FooterComponent />
     </React.Fragment>
   );
 };

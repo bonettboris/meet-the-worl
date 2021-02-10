@@ -1,30 +1,15 @@
-$shadow: 0 2px 6px #c5c5c5;
-$border: #e0e0e0;
+@import "./variables.scss";
+
+
+/* 
+    General 
+*/
 
 body {
     padding: 0;
     margin: 0;
     overflow-x: hidden;
-}
-
-nav {
-    align-items: center;
-    background-color: yellow;
-    box-shadow: $shadow;
-    border-bottom: 1px solid $border;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 20px 40px;
-}
-
-.wrapper {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 40px 0;
-    width: 100%;
+    font-family: 'Montserrat', sans-serif;
 }
 
 aside {
@@ -35,7 +20,104 @@ aside {
 main {
     width: 70%;
     padding: 0 20px;
+    overflow: auto;
+    height: 650px;
 }
+
+input {
+    border-radius: 4px;
+    border: 1px solid $border;
+    padding: 4px 18px;
+    width: 90%;
+    height: 40px;
+    font-size: 1.1em;
+}
+
+/* 
+    Navigation
+*/
+
+nav {
+    align-items: center;
+    background-color: $indigo;
+    box-shadow: $shadow-nav;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 24px;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: $white;
+}
+
+/* 
+    Main Content
+*/
+
+.wrapper {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 40px 0;
+    width: 100%;
+}
+
+.card {
+    border-radius: 8px;
+    box-shadow: $shadow;
+    border: 1px solid $border;
+    cursor: pointer;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+.flag {
+    &--size {
+        height: 100px;
+        width: 100px;
+        border: 1px solid $border;
+        border-radius: 50%;
+    }
+}
+
+.field {
+    font-weight: 300;
+
+    span {
+        font-weight: 600;
+    }
+}
+
+/* 
+    Filter Component
+*/
+
+.filter {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px 40px !important;
+
+    &__title {
+        h2 {
+            font-weight: 800;
+            color: $gray-variant1 !important;
+            text-transform: uppercase;
+            font-size: 1em;
+        }
+    }
+
+    &__form {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* 
+    Countries List Component
+*/
 
 .item {
     align-items: center;
@@ -50,19 +132,11 @@ main {
         flex-direction: row;
         justify-content: center;
         width: 20%;
-
-        .flag {
-            &--size {
-                height: 100px;
-                width: 100px;
-            }
-        }
     }
 
     &__information {
         align-items: center;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         width: 80%;
 
@@ -81,47 +155,12 @@ main {
             justify-content: space-around;
             width: 100%;
         }
-
-        .field {
-            font-weight: 600;
-
-            span {
-                font-weight: 300;
-            }
-        }
     }
 }
 
-.flter {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: 200px;
-    width: 100%;
-
-    &__title {
-        .text {
-            &--style {
-                font-weight: 600;
-            }
-        }
-    }
-}
-
-input {
-    border-radius: 4px;
-    border: 1px solid $border;
-    padding: 4px 8px;
-}
-
-.card {
-    border-radius: 4px;
-    box-shadow: $shadow;
-    border: 1px solid $border;
-    padding: 10px;
-    margin: 20px 0;
-}
+/* 
+    Modal Details Component
+*/
 
 .modal {
     position: fixed;
@@ -129,37 +168,37 @@ input {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: $opacity;
     opacity: 1;
     transform: scale(1.1);
     transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
     z-index: 1030;
-}
-.modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 1rem 1.5rem;
-    width: 24rem;
-    border-radius: 0.5rem;
-}
-.close-button {
-    float: right;
-    width: 1.5rem;
-    line-height: 1.5rem;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 0.25rem;
-    background-color: lightgray;
-}
-.close-button:hover {
-    background-color: darkgray;
-}
-.show-modal {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1.0);
-    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+
+    &__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $white;
+        padding: 1rem 1.5rem;
+        width: 24rem;
+        border-radius: 0.5rem;
+
+        .close-button {
+            cursor: pointer;
+            color: $dark;
+            float: right;
+            width: 1.5rem;
+            line-height: 1.5rem;
+            text-align: center;
+            font-size: 2.4em;
+        }
+        
+        .show-modal {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1.0);
+            transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+        }
+    }
 }
