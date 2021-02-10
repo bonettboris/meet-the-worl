@@ -19,6 +19,11 @@ const CountryDetailsModal = ({
               &times;
             </span>
             <h3>{countrySelected.name}</h3>
+            <h3>{countrySelected.subregion}</h3>
+            <h4>{countrySelected.alpha3Code}</h4>
+            <h4>{countrySelected.borders + ""}</h4>
+            <h4>{countrySelected.topLevelDomain[0]}</h4>
+            <h4>{countrySelected.languages[0].name}</h4>
           </div>
         </div>
       )}
