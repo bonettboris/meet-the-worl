@@ -21,7 +21,7 @@ const MapComponent = ({ location }) => {
             <GoogleMapReact
                 bootstrapURLKeys={SETTINGS.API_KEY_MAP}
                 defaultCenter={settings.center}
-                defaultZoom={1}
+                defaultZoom={5}
             ></GoogleMapReact>
         </div>
       )

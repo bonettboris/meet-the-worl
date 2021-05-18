@@ -289,10 +289,22 @@ nav {
 
 .footerContainer {
   background: #000000;
-  height: 46px;
 }
 
 @media screen and (max-width: 768px){
+  .filter {
+    &__title {
+      h2 {
+        font-size: 11px;
+      }
+    }
+  }
+
+  input {
+    font-size: 11px;
+    height: 15px;
+  }
+
   aside {
     width: 70%;
   }
@@ -301,12 +313,25 @@ nav {
     height: 230px;
   }
 
+  .flag {
+    &--size {
+      height: 70px;
+      width: 70px;
+    }
+  }
+
+  .field {
+    font-weight: 300;
+    margin: 10px;
+    font-size: 11px;
+  }
+
   .item {
     align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 180px;
+    height: 155px;
 
     &__avatar {
       align-items: center;
@@ -341,12 +366,53 @@ nav {
       }
     }
   }
+
+  .modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $opacity;
+    opacity: 1;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    z-index: 1030;
+  
+    &__content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $white;
+      padding: 1rem 1.5rem;
+      width: 16rem;
+      border-radius: 0.5rem;
+  
+      .close-button {
+        cursor: pointer;
+        color: $dark;
+        float: right;
+        width: 1.5rem;
+        line-height: 1.5rem;
+        text-align: center;
+        font-size: 2.4em;
+      }
+  
+      .show-modal {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+        transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 425px) {
- input {
-   font-size: 15px;
- }
+  input {
+    font-size: 11px;
+  }
 
   .filter {
     &__title {
