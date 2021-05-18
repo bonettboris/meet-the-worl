@@ -7,8 +7,8 @@ const FooterComponent = () => {
         <footer className="footerContainer">
             <h3 style={{color:'white', marginLeft: '18px'}}>Created by B.Bonett jaramillo</h3>
             <div style={{margin: '0 0 7px 18px'}}>
-                <a style={{marginRight: '15px'}} href='https://www.linkedin.com/in/boris-bonett-1270721a5/'><img src={linkedin} alt={linkedin}/></a>
-                <a><img src={github} alt={github}/></a>
+                <a style={{marginRight: '18px'}} href='https://www.linkedin.com/in/boris-bonett-1270721a5/'><img src={linkedin} alt={linkedin}/></a>
+                <a href='https://github.com/bonettboris/meet-the-worl'><img src={github} alt={github}/></a>
             </div>
         </footer>
     );
