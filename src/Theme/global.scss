@@ -11,16 +11,23 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+.flex {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+}
+
 aside {
-  width: 30%;
+  width: 50%;
   padding: 0 20px;
 }
 
 main {
-  width: 70%;
+  width: 90%;
   padding: 0 20px;
   overflow: auto;
-  height: 650px;
+  height: 335px;
 }
 
 input {
@@ -89,7 +96,7 @@ nav {
 .wrapper {
   align-items: flex-start;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   padding: 40px 0;
   width: 100%;
@@ -115,6 +122,7 @@ nav {
 
 .field {
   font-weight: 300;
+  margin: 10px;
 
   span {
     font-weight: 600;
@@ -236,7 +244,7 @@ nav {
 }
 
 /* 
-   Loader Component
+  Loader Component
 */
 
 .loader {
@@ -268,5 +276,137 @@ nav {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+/* 
+  end Loader Component
+*/
+
+/* 
+  footer Component
+*/
+
+.footerContainer {
+  background: #000000;
+  height: 46px;
+}
+
+@media screen and (max-width: 768px){
+  aside {
+    width: 70%;
+  }
+
+  main {
+    height: 230px;
+  }
+
+  .item {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 180px;
+
+    &__avatar {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: 25%;
+      margin: 0 10px;
+    }
+
+    &__information {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 80%;
+  
+      &__heading {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+      }
+  
+      &__description {
+        align-items: flex-start;
+        display: flex-end;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+ input {
+   font-size: 15px;
+ }
+
+  .filter {
+    &__title {
+      h2 {
+        font-size: 15px;
+      }
+    }
+  }
+
+  aside {
+    width: 88%;
+  }
+
+  main {
+    height: 350px;
+  }
+
+  .item {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 290px;
+
+    &__avatar {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: 25%;
+      margin: 0 10px;
+    }
+
+    &__information {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 80%;
+
+      h4 {
+        width: 100%;
+        font-size: 15px;
+      }
+  
+      &__heading {
+        align-items: flex-end;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+      }
+  
+      &__description {
+        align-items: flex-end;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+      }
+    }
   }
 }

@@ -6,9 +6,6 @@ const NavbarComponent = () => {
             <div>
                 Country App
             </div>
-            <div>
-                Boris Bonett
-            </div>
         </nav>
     )
 }

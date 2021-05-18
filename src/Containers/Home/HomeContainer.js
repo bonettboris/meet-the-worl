@@ -33,11 +33,11 @@ const HomePage = () => {
     const value = e.target.value;
     let countriesList = countries.filter(
       (country) =>
-        country.name.toLowerCase().includes(value) ||
-        country.region.toLowerCase().includes(value) ||
-        country.capital.toLowerCase().includes(value) ||
-        country.languages[0].iso639_1 == value ||
-        country.callingCodes[0] == value
+        country.name.toLowerCase().includes(value.toLowerCase())||
+        country.region.toLowerCase().includes(value.toLowerCase()) ||
+        country.capital.toLowerCase().includes(value.toLowerCase()) ||
+        country.languages[0].iso639_1 === value.toLowerCase() ||
+        country.callingCodes[0] === value.toLowerCase()
     );
 
     setCountriesList(countriesList);
